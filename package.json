@@ -35,7 +35,7 @@
     "xlsjs": "^1.0.1"
   },
   "devDependencies": {
-    "morgan": "^1.9.0",
+    "morgan": "^1.9.1",
     "nodemon": "^1.12.1"
   }
 }
