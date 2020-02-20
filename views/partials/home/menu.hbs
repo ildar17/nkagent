@@ -1,0 +1,12 @@
+{{#if _locals.user }}
+	<ul class="nav navbar-nav navbar-right">
+		<li><span class="text-lowercase">{{ _locals.user }}</span></li>
+		<li><a class="thumb" href="/admin/logout">Выйти</a></li>
+		<li><a class="thumb" href="/admin/template/admin">Личный кабинет</a></li>
+	</ul>
+{{else}}
+	<ul class="nav navbar-nav navbar-right">
+		<li><a class="thumb" href="/admin/login">Войти</a></li>
+		<li><a class="thumb" href="/admin/register">Регистрация</a></li>
+	</ul>
+{{/if}}

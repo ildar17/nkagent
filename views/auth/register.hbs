@@ -1,0 +1,52 @@
+<header>
+	{{>home/nav}}
+</header>
+<section class="main-slogan">
+	<div class="container">
+		<h1>{{h1}}</h1>
+	</div>
+</section>
+<div class="container">
+{{#if flash}}
+	<div class="alert alert-dismissible alert-{{flash.type}}">
+		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+		<strong>{{flash.intro}}</strong> {{{flash.message}}}
+	</div>
+{{/if}}
+	<div class="auth">
+		<form class="form-horizontal" action="/admin/register" method="post">
+			<input type="hidden" name="_csrf" value="{{_csrfToken}}">
+
+       <div class="col-sm-12" style="margin-bottom: 20px;">
+          <h3 style="margin-top: 0px"; align="center">Регистрация</h3>
+       </div>
+       <div class="clearfix"></div>
+       <div class="form-group{{#if repeatData.errEmail}} has-error{{/if}}">
+				<label for="inputEmail3" class="col-sm-3 control-label">Почтовый ящик</label>
+				<div class="col-sm-7">
+					<input type="email" name="user[email]" class="form-control" id="inputEmail3" placeholder="Электроннная почта" {{#if repeatData}}value="{{repeatData.email}}"{{/if}}>
+				</div>
+			</div>
+			<div class="form-group{{#if repeatData.errPass}} has-error{{/if}}">
+				<label for="inputPassword3" class="col-sm-3 control-label">Пароль</label>
+				<div class="col-sm-7">
+					<input type="password" name="user[pass]" class="form-control" id="inputPassword3" placeholder="Не менеe 4-х символов. Наличие цифр и англ. букв." {{#if repeatData}}value="{{repeatData.pass}}"{{/if}}>
+				</div>
+			</div>
+			<div class="form-group{{#if repeatData.errSum}} has-error{{/if}}">
+				<label for="inputPassword3" class="col-sm-3 control-label">Сумма двух чисел</label>
+				<div class="col-sm-3">
+					<input type="text" name="user[captcha]" class="form-control" id="inputPassword3">
+				</div><p>{{{total}}}</p>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-3 col-sm-9">
+					<button type="submit" class="btn btn-primary btn-margin">Зарегистрироваться</button>
+           <a style="margin-left: 15px" href="/admin/register" class="btn btn-warning btn-margins" role="button"><span class="glyphicon
+           glyphicon-refresh" aria-hidden="true"></span></a>
+				</div>
+			</div>
+		</form>
+	</div><!--/.auth-->
+</div><!--/.container-->
+{{>home/footer}}
