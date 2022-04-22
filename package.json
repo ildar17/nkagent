@@ -27,7 +27,7 @@
     "express-session": "^1.15.6",
     "helmet": "^3.9.0",
     "moment": "^2.19.3",
-    "nconf": "^0.9.1",
+    "nconf": "^0.11.4",
     "nodemailer": "^4.4.0",
     "password-validator": "^4.0.0",
     "pg": "^7.4.0",
